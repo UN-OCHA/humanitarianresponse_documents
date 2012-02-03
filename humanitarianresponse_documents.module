@@ -1,0 +1,48 @@
+<?php
+/**
+ * @file
+ */
+
+// Drupal needs this blank file.
+
+/**
+ * Implements hook_views_api().
+ */
+function humanitarianresponse_documents_views_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "views" && $api == "views_default") {
+    return array("version" => "3.0");
+  }
+}
+
+/**
+ * Implements hook_enable()
+ */
+function humanitarianresponse_documents_enable() {
+  // Add "Documents" to main menu
+  $documents = array(
+    'link_path' => 'documents',
+    'link_title' => 'Documents',
+    'menu_name' => 'main-menu',
+    'weight' => '10'
+  );
+  $mlid = menu_link_save($documents);
+  
+  $key = array(
+    'link_path' => 'documents/key',
+    'link_title' => 'Key Documents',
+    'menu_name' => 'main-menu',
+    'weight' => '0',
+    'plid' => $mlid,
+  );
+  menu_link_save($key);
+  
+  $archive = array(
+    'link_path' => 'documents/archives',
+    'link_title' => 'Archives',
+    'menu_name' => 'main-menu',
+    'weight' => '50',
+    'plid' => $mlid,
+  );
+  menu_link_save($archive);
+}
