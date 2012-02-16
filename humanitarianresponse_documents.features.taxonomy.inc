@@ -8,7 +8,7 @@
  * Implements hook_taxonomy_default_vocabularies().
  */
 function humanitarianresponse_documents_taxonomy_default_vocabularies() {
-  return array(
+  $export = array(
     'document_regions' => array(
       'name' => 'Document regions',
       'machine_name' => 'document_regions',
@@ -33,4 +33,12 @@ function humanitarianresponse_documents_taxonomy_default_vocabularies() {
       ),
     ),
   );
+  
+  if (module_exists('grupal_i18n')) {
+    foreach ($export as $key => $taxonomy) {
+      $export[$key]['i18n_mode'] = '1';
+    }
+  }
+  
+  return $export;
 }
