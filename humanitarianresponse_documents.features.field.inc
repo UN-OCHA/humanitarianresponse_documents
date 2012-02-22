@@ -523,3 +523,18 @@ function humanitarianresponse_documents_field_default_fields() {
 
   return $fields;
 }
+
+/**
+ * Implements hook_field_default_fields_alter().
+ */
+function humanitarianresponse_documents_field_default_fields_alter(&$fields) {
+  if (isset($fields['node-document-body'])) {
+    $fields['node-document-body']['widget']['weight'] = '50';
+  }
+  if (isset($fields['node-document-field_document_files'])) {
+    $fields['node-document-field_document_files']['field_config']['cardinality'] = '1';
+    $fields['node-document-field_document_files']['field_instance']['label'] = 'File';
+    $fields['node-document-field_document_files']['widget']['weight'] = '0';
+  }
+}
+    
