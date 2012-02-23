@@ -13,7 +13,7 @@ function humanitarianresponse_documents_taxonomy_default_vocabularies() {
       'name' => 'Document types',
       'machine_name' => 'document_types',
       'description' => 'Group your documents under different types',
-      'hierarchy' => '0',
+      'hierarchy' => '1',
       'module' => 'taxonomy',
       'weight' => '0',
       'rdf_mapping' => array(
