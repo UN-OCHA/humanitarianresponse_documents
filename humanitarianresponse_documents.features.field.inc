@@ -117,7 +117,7 @@ function humanitarianresponse_documents_field_default_fields() {
       'entity_type' => 'field_collection_item',
       'field_name' => 'field_document_files_languages',
       'label' => 'Language(s)',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -390,7 +390,7 @@ function humanitarianresponse_documents_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_document_files',
       'label' => 'File(s)',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -826,7 +826,7 @@ function humanitarianresponse_documents_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_document_type',
       'label' => 'Type',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
