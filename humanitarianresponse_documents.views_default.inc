@@ -22,7 +22,7 @@ function humanitarianresponse_documents_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Resources per type';
+  $handler->display->display_options['title'] = 'Documents';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -62,32 +62,29 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['title_enable'] = 1;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['title'] = '%1';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['breadcrumb'] = '%1';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['term_page'] = 0;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['node'] = 0;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_options']['limit'] = 0;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = 1;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['vocabularies'] = array(
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['tid']['title_enable'] = 1;
+  $handler->display->display_options['arguments']['tid']['title'] = '%1';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tid']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = 1;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'document_types' => 'document_types',
   );
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['transform'] = 0;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '2';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['set_breadcrumb'] = 0;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['use_taxonomy_term_path'] = 0;
+  $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = 0;
+  $handler->display->display_options['arguments']['tid']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['tid']['add_table'] = 0;
+  $handler->display->display_options['arguments']['tid']['require_value'] = 0;
+  $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['arguments']['tid']['set_breadcrumb'] = 1;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -103,12 +100,12 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
 
-  /* Display: Per type */
-  $handler = $view->new_display('page', 'Per type', 'page');
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
-  /* Display: Feed per type */
-  $handler = $view->new_display('feed', 'Feed per type', 'feed');
+  /* Display: Feed */
+  $handler = $view->new_display('feed', 'Feed', 'feed');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
@@ -117,9 +114,9 @@ function humanitarianresponse_documents_views_default_views() {
     'default' => 'default',
     'page' => 'page',
   );
-  $translatables['documents'] = array(
+  $translatables['resources'] = array(
     t('Master'),
-    t('Resources per type'),
+    t('Documents'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -132,8 +129,8 @@ function humanitarianresponse_documents_views_default_views() {
     t('There are no resources in this category'),
     t('All'),
     t('%1'),
-    t('Per type'),
-    t('Feed per type'),
+    t('Page'),
+    t('Feed'),
   );
   $export['documents'] = $view;
 
