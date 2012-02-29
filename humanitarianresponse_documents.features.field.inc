@@ -76,14 +76,14 @@ function humanitarianresponse_documents_field_default_fields() {
     ),
   );
 
-  // Exported field: 'field_collection_item-field_document_files-field_document_files_languages'
-  $fields['field_collection_item-field_document_files-field_document_files_languages'] = array(
+  // Exported field: 'field_collection_item-field_document_files-field_file_languages'
+  $fields['field_collection_item-field_document_files-field_file_languages'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_document_files_languages',
+      'field_name' => 'field_file_languages',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -111,13 +111,13 @@ function humanitarianresponse_documents_field_default_fields() {
           'module' => 'languagefield',
           'settings' => array(),
           'type' => 'language_default',
-          'weight' => 1,
+          'weight' => 2,
         ),
       ),
       'entity_type' => 'field_collection_item',
-      'field_name' => 'field_document_files_languages',
+      'field_name' => 'field_file_languages',
       'label' => 'Language(s)',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -125,8 +125,8 @@ function humanitarianresponse_documents_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '2',
+        'type' => 'options_select',
+        'weight' => '4',
       ),
     ),
   );
