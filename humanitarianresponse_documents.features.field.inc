@@ -199,7 +199,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '20',
+        'weight' => '13',
       ),
     ),
   );
@@ -269,7 +269,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -339,7 +339,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '6',
       ),
     ),
   );
@@ -409,7 +409,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '19',
+        'weight' => '12',
       ),
     ),
   );
@@ -688,7 +688,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '17',
+        'weight' => '11',
       ),
     ),
   );
@@ -758,7 +758,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '5',
       ),
     ),
   );
@@ -828,19 +828,19 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '11',
+        'weight' => '7',
       ),
     ),
   );
 
-  // Exported field: 'node-document-field_organization'
-  $fields['node-document-field_organization'] = array(
+  // Exported field: 'node-document-field_organizations'
+  $fields['node-document-field_organizations'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_organization',
+      'field_name' => 'field_organizations',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -877,7 +877,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 20,
+          'weight' => 24,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -887,7 +887,7 @@ function humanitarianresponse_documents_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_organization',
+      'field_name' => 'field_organizations',
       'label' => 'Source',
       'required' => 0,
       'settings' => array(
@@ -898,7 +898,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '13',
+        'weight' => '9',
       ),
     ),
   );
@@ -968,7 +968,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '15',
+        'weight' => '10',
       ),
     ),
   );
