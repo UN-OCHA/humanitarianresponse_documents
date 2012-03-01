@@ -257,8 +257,8 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    40 => '40',
-    37 => '37',
+    41 => '41',
+    38 => '38',
   );
   $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
   $handler->display->display_options['filters']['tid']['type'] = 'select';
@@ -520,7 +520,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
   $handler->display->display_options['filters']['term_node_tid_depth']['value'] = array(
-    20 => '20',
+    21 => '21',
   );
   $handler->display->display_options['filters']['term_node_tid_depth']['reduce_duplicates'] = 0;
   $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
