@@ -465,7 +465,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_thumbnail']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_document_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_document_thumbnail']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_document_thumbnail']['field_api_classes'] = 0;
