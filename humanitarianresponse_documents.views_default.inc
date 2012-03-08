@@ -381,6 +381,11 @@ function humanitarianresponse_documents_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Home Key', 'panel_pane_7');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Key Documents';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'resources/key';
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -500,6 +505,11 @@ function humanitarianresponse_documents_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Home Reports', 'panel_pane_9');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Latest Reports';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'resources/reports';
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -526,31 +536,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
   $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '4';
-  $translatables['documents'] = array(
-    t('Master'),
-    t('Resources'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Cluster'),
-    t('All'),
-    t('View panes'),
-    t('Coordination Hub'),
-    t('Funding'),
-    t('Cluster Key'),
-    t('Key Documents'),
-    t('Cluster Guidelines'),
-    t('Guidelines & Templates'),
-    t('Funding Featured'),
-    t('Featured Document'),
-    t('Home Key'),
-    t('Home Featured'),
-    t('Home Reports'),
-    t('Latest Reports'),
-  );
   $export['documents'] = $view;
 
   return $export;
