@@ -20,5 +20,32 @@ function humanitarianresponse_documents_user_default_permissions() {
     'module' => 'field_collection',
   );
 
+  // Exported permission: create document content
+  $permissions['create document content'] = array(
+    'name' => 'create document content',
+    'roles' => array(
+      0 => 'editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own document content
+  $permissions['delete own document content'] = array(
+    'name' => 'delete own document content',
+    'roles' => array(
+      0 => 'editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own document content
+  $permissions['edit own document content'] = array(
+    'name' => 'edit own document content',
+    'roles' => array(
+      0 => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   return $permissions;
 }
