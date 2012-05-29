@@ -46,7 +46,7 @@ function humanitarianresponse_documents_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
@@ -107,7 +107,7 @@ function humanitarianresponse_documents_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'languagefield',
           'settings' => array(),
           'type' => 'language_default',
@@ -116,7 +116,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'field_collection_item',
       'field_name' => 'field_file_languages',
-      'label' => 'Language(s)',
+      'label' => 'Language',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -260,7 +260,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_clusters',
-      'label' => 'Cluster(s)',
+      'label' => 'Cluster',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -330,7 +330,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_coordination_hubs',
-      'label' => 'Coordination Hub(s)',
+      'label' => 'Coordination Hub',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -463,7 +463,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_document_files',
-      'label' => 'File(s)',
+      'label' => 'File',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -757,7 +757,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_fundings',
-      'label' => 'Funding(s)',
+      'label' => 'Funding',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -828,7 +828,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_locations',
-      'label' => 'Location(s)',
+      'label' => 'Location',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -970,7 +970,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_themes',
-      'label' => 'Theme(s)',
+      'label' => 'Theme',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -987,18 +987,18 @@ function humanitarianresponse_documents_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Cluster(s)');
-  t('Coordination Hub(s)');
+  t('Cluster');
+  t('Coordination Hub');
   t('Description');
   t('Emergency');
   t('File');
-  t('File(s)');
-  t('Funding(s)');
-  t('Language(s)');
-  t('Location(s)');
+  t('File');
+  t('Funding');
+  t('Language');
+  t('Location');
   t('Properties');
   t('Source');
-  t('Theme(s)');
+  t('Theme');
   t('Thumbnail');
   t('Type');
 
