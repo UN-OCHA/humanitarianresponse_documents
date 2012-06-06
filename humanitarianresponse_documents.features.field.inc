@@ -992,7 +992,6 @@ function humanitarianresponse_documents_field_default_fields() {
   t('Description');
   t('Emergency');
   t('File');
-  t('File');
   t('Funding');
   t('Language');
   t('Location');
