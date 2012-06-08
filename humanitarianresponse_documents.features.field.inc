@@ -48,7 +48,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'file',
-          'settings' => array( ),
+          'settings' => array(),
           'type' => 'file_default',
           'weight' => '0',
         ),

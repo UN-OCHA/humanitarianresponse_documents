@@ -31,7 +31,9 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = 1;
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = 0;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = 1;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -306,19 +308,6 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
-  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
   /* Filter criterion: Content: Type (field_document_type) */
   $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
@@ -381,21 +370,19 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
 
   /* Display: Documents per term */
   $handler = $view->new_display('page', 'Documents per term', 'documents_per_term');
@@ -591,31 +578,44 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'There are no key documents';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: File (field_document_files) */
+  $handler->display->display_options['relationships']['field_document_files_value']['id'] = 'field_document_files_value';
+  $handler->display->display_options['relationships']['field_document_files_value']['table'] = 'field_data_field_document_files';
+  $handler->display->display_options['relationships']['field_document_files_value']['field'] = 'field_document_files_value';
+  $handler->display->display_options['relationships']['field_document_files_value']['required'] = 0;
+  $handler->display->display_options['relationships']['field_document_files_value']['delta'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Field: Field collection item: File */
+  $handler->display->display_options['fields']['field_document_files_file']['id'] = 'field_document_files_file';
+  $handler->display->display_options['fields']['field_document_files_file']['table'] = 'field_data_field_document_files_file';
+  $handler->display->display_options['fields']['field_document_files_file']['field'] = 'field_document_files_file';
+  $handler->display->display_options['fields']['field_document_files_file']['relationship'] = 'field_document_files_value';
+  $handler->display->display_options['fields']['field_document_files_file']['label'] = '';
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_document_files_file']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_document_files_file']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_document_files_file']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_document_files_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_document_files_file']['type'] = 'file_table';
+  $handler->display->display_options['fields']['field_document_files_file']['settings'] = array(
+    'file_view_mode' => 'token',
+  );
+  $handler->display->display_options['fields']['field_document_files_file']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1563,21 +1563,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -1586,7 +1571,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
@@ -1751,21 +1736,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -1773,7 +1743,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
@@ -1912,20 +1882,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -1933,7 +1889,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
@@ -2092,21 +2048,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -2114,7 +2055,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
@@ -2253,20 +2194,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -2274,7 +2201,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
@@ -2409,21 +2336,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -2431,7 +2343,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
@@ -2560,21 +2472,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
-  /* Filter criterion: Content: Theme(s) (field_themes) */
-  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
-  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
-  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
@@ -2582,7 +2479,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
