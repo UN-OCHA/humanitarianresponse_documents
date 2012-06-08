@@ -396,7 +396,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
 
   /* Display: Documents per term */
-  $handler = $view->new_display('page', 'Documents per term', 'page_1');
+  $handler = $view->new_display('page', 'Documents per term', 'documents_per_term');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -562,7 +562,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'taxonomy/term/%/resources';
 
   /* Display: Home Key */
-  $handler = $view->new_display('panel_pane', 'Home Key', 'panel_pane_7');
+  $handler = $view->new_display('panel_pane', 'Home Key', 'home_key');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Key Documents';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -606,7 +606,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
 
   /* Display: Home Featured */
-  $handler = $view->new_display('panel_pane', 'Home Featured', 'panel_pane_8');
+  $handler = $view->new_display('panel_pane', 'Home Featured', 'home_featured');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Document';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -704,7 +704,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
 
   /* Display: Home Reports */
-  $handler = $view->new_display('panel_pane', 'Home Reports', 'panel_pane_9');
+  $handler = $view->new_display('panel_pane', 'Home Reports', 'home_reports');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Latest Reports';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -749,7 +749,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '4';
 
   /* Display: Block per term */
-  $handler = $view->new_display('block', 'Block per term', 'block_1');
+  $handler = $view->new_display('block', 'Block per term', 'block_per_term');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -910,7 +910,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['block_description'] = 'Documents per term';
 
   /* Display: Cluster Key */
-  $handler = $view->new_display('block', 'Cluster Key', 'block_2');
+  $handler = $view->new_display('block', 'Cluster Key', 'cluster_key');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Key Documents';
   $handler->display->display_options['defaults']['empty'] = FALSE;
@@ -975,7 +975,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['block_description'] = 'Cluster Key Documents';
 
   /* Display: Cluster Guidelines */
-  $handler = $view->new_display('block', 'Cluster Guidelines', 'block_3');
+  $handler = $view->new_display('block', 'Cluster Guidelines', 'cluster_guidelines');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Guidelines & Templates';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -1169,7 +1169,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['block_description'] = 'Cluster Guidelines';
 
   /* Display: Funding Featured */
-  $handler = $view->new_display('block', 'Funding Featured', 'block_4');
+  $handler = $view->new_display('block', 'Funding Featured', 'funding_featured');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Document';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1290,11 +1290,11 @@ function humanitarianresponse_documents_views_default_views() {
 
 
   /* Display: Resources */
-  $handler = $view->new_display('page', 'Resources', 'page');
+  $handler = $view->new_display('page', 'Resources', 'resources');
   $handler->display->display_options['path'] = 'resources';
 
   /* Display: Resources Feed */
-  $handler = $view->new_display('feed', 'Resources Feed', 'feed');
+  $handler = $view->new_display('feed', 'Resources Feed', 'resources_feed');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
@@ -1320,7 +1320,7 @@ function humanitarianresponse_documents_views_default_views() {
   );
 
   /* Display: Reports */
-  $handler = $view->new_display('page', 'Reports', 'page_1');
+  $handler = $view->new_display('page', 'Reports', 'reports');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Reports';
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1455,7 +1455,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'resources/reports';
 
   /* Display: Reports Feed */
-  $handler = $view->new_display('feed', 'Reports Feed', 'feed_1');
+  $handler = $view->new_display('feed', 'Reports Feed', 'reports_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Reports';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -1506,7 +1506,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: Training */
-  $handler = $view->new_display('page', 'Training', 'page_2');
+  $handler = $view->new_display('page', 'Training', 'training');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Training & Resource Materials';
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1642,7 +1642,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'resources/training-and-resource-materials';
 
   /* Display: Training Feed */
-  $handler = $view->new_display('feed', 'Training Feed', 'feed_2');
+  $handler = $view->new_display('feed', 'Training Feed', 'training_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Training & Resource Materials';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -1695,7 +1695,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: Dashboard */
-  $handler = $view->new_display('page', 'Dashboard', 'page_3');
+  $handler = $view->new_display('page', 'Dashboard', 'dashboard');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Dashboard';
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1802,7 +1802,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'resources/dashboard';
 
   /* Display: Dashboard Feed */
-  $handler = $view->new_display('feed', 'Dashboard Feed', 'feed_3');
+  $handler = $view->new_display('feed', 'Dashboard Feed', 'dashboard_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Dashboard';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -1853,7 +1853,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: Policy */
-  $handler = $view->new_display('page', 'Policy', 'page_4');
+  $handler = $view->new_display('page', 'Policy', 'policy');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Policy & Guidance';
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1983,7 +1983,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'resources/policy-and-guidance';
 
   /* Display: Policy Feed */
-  $handler = $view->new_display('feed', 'Policy Feed', 'feed_4');
+  $handler = $view->new_display('feed', 'Policy Feed', 'policy_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Policy & Guidance';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -2036,7 +2036,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: Press */
-  $handler = $view->new_display('page', 'Press', 'page_5');
+  $handler = $view->new_display('page', 'Press', 'press');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Press Releases';
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -2143,7 +2143,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'media-center/press-releases';
 
   /* Display: Press Feed */
-  $handler = $view->new_display('feed', 'Press Feed', 'feed_5');
+  $handler = $view->new_display('feed', 'Press Feed', 'press_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Press Releases';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -2194,7 +2194,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: Key */
-  $handler = $view->new_display('page', 'Key', 'page_6');
+  $handler = $view->new_display('page', 'Key', 'key');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Key Documents';
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -2300,7 +2300,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'resources/key';
 
   /* Display: Key Feed */
-  $handler = $view->new_display('feed', 'Key Feed', 'feed_6');
+  $handler = $view->new_display('feed', 'Key Feed', 'key_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Key Documents';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -2345,7 +2345,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: Featured */
-  $handler = $view->new_display('page', 'Featured', 'page_7');
+  $handler = $view->new_display('page', 'Featured', 'featured');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Documents';
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -2451,7 +2451,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['path'] = 'resources/featured';
 
   /* Display: Featured Feed */
-  $handler = $view->new_display('feed', 'Featured Feed', 'feed_7');
+  $handler = $view->new_display('feed', 'Featured Feed', 'featured_feed');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Documents';
   $handler->display->display_options['pager']['type'] = 'some';
