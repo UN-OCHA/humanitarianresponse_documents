@@ -966,6 +966,1220 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['block_description'] = 'Funding Featured Documents';
+
+
+
+
+
+
+
+  /* Display: Resources */
+  $handler = $view->new_display('page', 'Resources', 'page');
+  $handler->display->display_options['path'] = 'resources';
+
+  /* Display: Resources Feed */
+  $handler = $view->new_display('feed', 'Resources Feed', 'feed');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['path'] = 'resources/feed';
+  $handler->display->display_options['displays'] = array(
+    'default' => 'default',
+    'page' => 'page',
+  );
+
+  /* Display: Reports */
+  $handler = $view->new_display('page', 'Reports', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Reports';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    25 => '25',
+    26 => '26',
+    27 => '27',
+    28 => '28',
+    29 => '29',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    22 => '22',
+    23 => '23',
+    24 => '24',
+    25 => '25',
+    26 => '26',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Location (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator_id'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Source (field_organizations) */
+  $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_organizations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator_id'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['label'] = 'Source';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['identifier'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Theme(s) (field_themes) */
+  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'resources/reports';
+
+  /* Display: Reports Feed */
+  $handler = $view->new_display('feed', 'Reports Feed', 'feed_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Reports';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    25 => '25',
+    26 => '26',
+    27 => '27',
+    28 => '28',
+    29 => '29',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  $handler->display->display_options['path'] = 'resources/reports/feed';
+  $handler->display->display_options['displays'] = array(
+    'page_1' => 'page_1',
+    'default' => 0,
+    'page' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Training */
+  $handler = $view->new_display('page', 'Training', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Training & Resource Materials';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    36 => '36',
+    37 => '37',
+    41 => '41',
+    38 => '38',
+    40 => '40',
+    39 => '39',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    33 => '33',
+    34 => '34',
+    38 => '38',
+    35 => '35',
+    37 => '37',
+    36 => '36',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Location (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator_id'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Source (field_organizations) */
+  $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_organizations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator_id'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['label'] = 'Source';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['identifier'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Theme(s) (field_themes) */
+  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'resources/training-and-resource-materials';
+
+  /* Display: Training Feed */
+  $handler = $view->new_display('feed', 'Training Feed', 'feed_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Training & Resource Materials';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    36 => '36',
+    37 => '37',
+    41 => '41',
+    38 => '38',
+    40 => '40',
+    39 => '39',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  $handler->display->display_options['path'] = 'resources/training-and-resource-materials/feed';
+  $handler->display->display_options['displays'] = array(
+    'page_2' => 'page_2',
+    'default' => 0,
+    'page' => 0,
+    'page_1' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Dashboard */
+  $handler = $view->new_display('page', 'Dashboard', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Dashboard';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    54 => '54',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Location (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator_id'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Source (field_organizations) */
+  $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator_id'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['label'] = 'Source';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['identifier'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Theme(s) (field_themes) */
+  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'resources/dashboard';
+
+  /* Display: Dashboard Feed */
+  $handler = $view->new_display('feed', 'Dashboard Feed', 'feed_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Dashboard';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    54 => '54',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  $handler->display->display_options['path'] = 'resources/dashboard/feed';
+  $handler->display->display_options['displays'] = array(
+    'page_3' => 'page_3',
+    'default' => 0,
+    'page' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_4' => 0,
+    'page_5' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Policy */
+  $handler = $view->new_display('page', 'Policy', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Policy & Guidance';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    44 => '44',
+    43 => '43',
+    45 => '45',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    41 => '41',
+    40 => '40',
+    42 => '42',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Location (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator_id'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Source (field_organizations) */
+  $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_organizations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator_id'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['label'] = 'Source';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['identifier'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Theme(s) (field_themes) */
+  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'resources/policy-and-guidance';
+
+  /* Display: Policy Feed */
+  $handler = $view->new_display('feed', 'Policy Feed', 'feed_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Policy & Guidance';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    44 => '44',
+    43 => '43',
+    45 => '45',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  $handler->display->display_options['path'] = 'resources/policy-and-guidance/feed';
+  $handler->display->display_options['displays'] = array(
+    'page_4' => 'page_4',
+    'default' => 0,
+    'page' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page_5' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Press */
+  $handler = $view->new_display('page', 'Press', 'page_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Press Releases';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    53 => '53',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Location (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator_id'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Source (field_organizations) */
+  $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator_id'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['label'] = 'Source';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['identifier'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Theme(s) (field_themes) */
+  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'media-center/press-releases';
+
+  /* Display: Press Feed */
+  $handler = $view->new_display('feed', 'Press Feed', 'feed_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Press Releases';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    53 => '53',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
+  $handler->display->display_options['path'] = 'media-center/press-releases/feed';
+  $handler->display->display_options['displays'] = array(
+    'page_5' => 'page_5',
+    'default' => 0,
+    'page' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page_4' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Key */
+  $handler = $view->new_display('page', 'Key', 'page_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Key Documents';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    55 => '55',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Location (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator_id'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Source (field_organizations) */
+  $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_organizations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator_id'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['label'] = 'Source';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['identifier'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Theme(s) (field_themes) */
+  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'resources/key';
+
+  /* Display: Key Feed */
+  $handler = $view->new_display('feed', 'Key Feed', 'feed_6');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Key Documents';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    55 => '55',
+  );
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
+  $handler->display->display_options['path'] = 'resources/key/feed';
+  $handler->display->display_options['displays'] = array(
+    'page_6' => 'page_6',
+    'default' => 0,
+    'page' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page_4' => 0,
+    'page_5' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Featured */
+  $handler = $view->new_display('page', 'Featured', 'page_7');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Featured Documents';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    56 => '56',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = 1;
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Location (field_locations) */
+  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator_id'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['operator'] = 'field_locations_tid_op';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
+  $handler->display->display_options['filters']['field_locations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_locations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Source (field_organizations) */
+  $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_organizations_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator_id'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['label'] = 'Source';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['operator'] = 'field_organizations_tid_op';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['identifier'] = 'field_organizations_tid';
+  $handler->display->display_options['filters']['field_organizations_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_organizations_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_organizations_tid']['vocabulary'] = 'organizations';
+  $handler->display->display_options['filters']['field_organizations_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Theme(s) (field_themes) */
+  $handler->display->display_options['filters']['field_themes_tid']['id'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_tid']['field'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_themes_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator_id'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['operator'] = 'field_themes_tid_op';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['identifier'] = 'field_themes_tid';
+  $handler->display->display_options['filters']['field_themes_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_themes_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_themes_tid']['vocabulary'] = 'themes';
+  $handler->display->display_options['filters']['field_themes_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search for';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['title']['expose']['multiple'] = FALSE;
+  $handler->display->display_options['path'] = 'resources/featured';
+
+  /* Display: Featured Feed */
+  $handler = $view->new_display('feed', 'Featured Feed', 'feed_7');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Featured Documents';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    56 => '56',
+  );
+  $handler->display->display_options['filters']['tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
+  $handler->display->display_options['path'] = 'resources/featured/feed';
+  $handler->display->display_options['displays'] = array(
+    'page_7' => 'page_7',
+    'default' => 0,
+    'page' => 0,
+    'page_1' => 0,
+    'page_2' => 0,
+    'page_3' => 0,
+    'page_4' => 0,
+    'page_5' => 0,
+    'page_6' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
   $export['documents'] = $view;
 
   return $export;
