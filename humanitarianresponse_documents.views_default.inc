@@ -1454,8 +1454,23 @@ function humanitarianresponse_documents_views_default_views() {
   );
   $handler->display->display_options['path'] = 'resources/feed';
   $handler->display->display_options['displays'] = array(
-    'default' => 'default',
-    'page' => 'page',
+    'resources' => 'resources',
+    'default' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'reports' => 0,
+    'training' => 0,
+    'dashboard' => 0,
+    'policy' => 0,
+    'press' => 0,
+    'key' => 0,
+    'featured' => 0,
   );
 
   /* Display: Reports */
@@ -1623,9 +1638,23 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
   $handler->display->display_options['path'] = 'resources/reports/feed';
   $handler->display->display_options['displays'] = array(
-    'page_1' => 'page_1',
+    'reports' => 'reports',
     'default' => 0,
-    'page' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'resources' => 0,
+    'training' => 0,
+    'dashboard' => 0,
+    'policy' => 0,
+    'press' => 0,
+    'key' => 0,
+    'featured' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -1796,10 +1825,23 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
   $handler->display->display_options['path'] = 'resources/training-and-resource-materials/feed';
   $handler->display->display_options['displays'] = array(
-    'page_2' => 'page_2',
+    'training' => 'training',
     'default' => 0,
-    'page' => 0,
-    'page_1' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'resources' => 0,
+    'reports' => 0,
+    'dashboard' => 0,
+    'policy' => 0,
+    'press' => 0,
+    'key' => 0,
+    'featured' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -1937,13 +1979,23 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
   $handler->display->display_options['path'] = 'resources/dashboard/feed';
   $handler->display->display_options['displays'] = array(
-    'page_3' => 'page_3',
+    'dashboard' => 'dashboard',
     'default' => 0,
-    'page' => 0,
-    'page_1' => 0,
-    'page_2' => 0,
-    'page_4' => 0,
-    'page_5' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'resources' => 0,
+    'reports' => 0,
+    'training' => 0,
+    'policy' => 0,
+    'press' => 0,
+    'key' => 0,
+    'featured' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -2105,13 +2157,23 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
   $handler->display->display_options['path'] = 'resources/policy-and-guidance/feed';
   $handler->display->display_options['displays'] = array(
-    'page_4' => 'page_4',
+    'policy' => 'policy',
     'default' => 0,
-    'page' => 0,
-    'page_1' => 0,
-    'page_2' => 0,
-    'page_3' => 0,
-    'page_5' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'resources' => 0,
+    'reports' => 0,
+    'training' => 0,
+    'dashboard' => 0,
+    'press' => 0,
+    'key' => 0,
+    'featured' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -2249,13 +2311,23 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['error_message'] = 1;
   $handler->display->display_options['path'] = 'media-center/press-releases/feed';
   $handler->display->display_options['displays'] = array(
-    'page_5' => 'page_5',
+    'press' => 'press',
     'default' => 0,
-    'page' => 0,
-    'page_1' => 0,
-    'page_2' => 0,
-    'page_3' => 0,
-    'page_4' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'resources' => 0,
+    'reports' => 0,
+    'training' => 0,
+    'dashboard' => 0,
+    'policy' => 0,
+    'key' => 0,
+    'featured' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -2384,14 +2456,23 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['path'] = 'resources/key/feed';
   $handler->display->display_options['displays'] = array(
-    'page_6' => 'page_6',
+    'key' => 'key',
     'default' => 0,
-    'page' => 0,
-    'page_1' => 0,
-    'page_2' => 0,
-    'page_3' => 0,
-    'page_4' => 0,
-    'page_5' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'resources' => 0,
+    'reports' => 0,
+    'training' => 0,
+    'dashboard' => 0,
+    'policy' => 0,
+    'press' => 0,
+    'featured' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -2520,15 +2601,23 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['path'] = 'resources/featured/feed';
   $handler->display->display_options['displays'] = array(
-    'page_7' => 'page_7',
+    'featured' => 'featured',
     'default' => 0,
-    'page' => 0,
-    'page_1' => 0,
-    'page_2' => 0,
-    'page_3' => 0,
-    'page_4' => 0,
-    'page_5' => 0,
-    'page_6' => 0,
+    'documents_per_term' => 0,
+    'home_key' => 0,
+    'home_featured' => 0,
+    'home_reports' => 0,
+    'block_per_term' => 0,
+    'cluster_key' => 0,
+    'cluster_guidelines' => 0,
+    'funding_featured' => 0,
+    'resources' => 0,
+    'reports' => 0,
+    'training' => 0,
+    'dashboard' => 0,
+    'policy' => 0,
+    'press' => 0,
+    'key' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
   $export['documents'] = $view;
