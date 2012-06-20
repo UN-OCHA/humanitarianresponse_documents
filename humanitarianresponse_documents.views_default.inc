@@ -648,8 +648,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['title'] = 'Featured Document';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
-  $handler->display->display_options['use_more_always'] = TRUE;
-  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'featured';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -2620,6 +2618,69 @@ function humanitarianresponse_documents_views_default_views() {
     'key' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
+  $translatables['documents'] = array(
+    t('Master'),
+    t('Resources'),
+    t('View all'),
+    t('Search'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('There are no resources in this category'),
+    t('Title'),
+    t('Type'),
+    t('Cluster'),
+    t('Theme'),
+    t('Location'),
+    t('Source'),
+    t('File'),
+    t('Documents per term'),
+    t('more'),
+    t('Date'),
+    t('All'),
+    t('Home Key'),
+    t('Key Documents'),
+    t('There are no key documents'),
+    t('field collection item from field_document_files'),
+    t('View panes'),
+    t('Home Featured'),
+    t('Featured Document'),
+    t('There is no featured document'),
+    t('Home Reports'),
+    t('Latest Reports'),
+    t('There are no reports'),
+    t('Block per term'),
+    t('Cluster Key'),
+    t('Cluster Key Documents'),
+    t('Cluster Guidelines'),
+    t('Guidelines & Templates'),
+    t('There are no guidelines & templates'),
+    t('Funding Featured'),
+    t('Funding Featured Documents'),
+    t('Resources Feed'),
+    t('Reports'),
+    t('Reports Feed'),
+    t('Training'),
+    t('Training & Resource Materials'),
+    t('Training Feed'),
+    t('Dashboard'),
+    t('Dashboard Feed'),
+    t('Policy'),
+    t('Policy & Guidance'),
+    t('Policy Feed'),
+    t('Press'),
+    t('Press Releases'),
+    t('Press Feed'),
+    t('Key'),
+    t('Key Feed'),
+    t('Featured'),
+    t('Featured Documents'),
+    t('Featured Feed'),
+  );
   $export['documents'] = $view;
 
   return $export;
