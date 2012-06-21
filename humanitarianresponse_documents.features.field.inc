@@ -1208,6 +1208,7 @@ function humanitarianresponse_documents_field_default_fields() {
   t('Emergency');
   t('File');
   t('Funding');
+  t('If you can not find the proper type in this list, please contact your site manager.');
   t('Language');
   t('Location');
   t('Name');
