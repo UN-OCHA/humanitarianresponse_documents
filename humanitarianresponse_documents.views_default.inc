@@ -1509,11 +1509,13 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
-    22 => '22',
-    23 => '23',
-    24 => '24',
     25 => '25',
     26 => '26',
+    27 => '27',
+    28 => '28',
+    29 => '29',
+    30 => '30',
+    31 => '31',
   );
   $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
@@ -1684,12 +1686,12 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
-    33 => '33',
-    34 => '34',
     38 => '38',
-    35 => '35',
-    37 => '37',
-    36 => '36',
+    39 => '39',
+    43 => '43',
+    40 => '40',
+    42 => '42',
+    41 => '41',
   );
   $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
@@ -2014,9 +2016,9 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
-    41 => '41',
-    40 => '40',
-    42 => '42',
+    46 => '46',
+    45 => '45',
+    47 => '47',
   );
   $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
