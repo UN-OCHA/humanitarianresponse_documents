@@ -641,14 +641,17 @@ function humanitarianresponse_documents_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-document-field_emergency'.
-  $fields['node-document-field_emergency'] = array(
+  // Exported field: 'node-document-field_emergencies'.
+  $fields['node-document-field_emergencies'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_emergency',
+      'field_name' => 'field_emergencies',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -686,18 +689,18 @@ function humanitarianresponse_documents_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '22',
+          'weight' => 26,
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_emergency',
-      'label' => 'Emergency',
+      'field_name' => 'field_emergencies',
+      'label' => 'Emergencies',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -706,7 +709,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_select',
+        'type' => 'options_buttons',
         'weight' => '11',
       ),
     ),
@@ -1064,7 +1067,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => -5,
+        'weight' => '0',
       ),
     ),
   );
@@ -1196,7 +1199,7 @@ function humanitarianresponse_documents_field_default_fields() {
   t('Cluster');
   t('Coordination Hub');
   t('Description');
-  t('Emergency');
+  t('Emergencies');
   t('File');
   t('Funding');
   t('If you can not find the proper type in this list, please contact your site manager.');

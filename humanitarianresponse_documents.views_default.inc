@@ -540,6 +540,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'clusters' => 'clusters',
     'coordination_hubs' => 'coordination_hubs',
+    'emergencies' => 'emergencies',
     'funding' => 'funding',
   );
   $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = 0;
@@ -988,6 +989,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'clusters' => 'clusters',
     'coordination_hubs' => 'coordination_hubs',
+    'emergencies' => 'emergencies',
     'funding' => 'funding',
   );
   $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = 0;
