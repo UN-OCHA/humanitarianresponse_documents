@@ -454,7 +454,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'document' => 'document',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -555,7 +555,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'document' => 'document',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -637,7 +637,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'document' => 'document',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -700,7 +700,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -714,7 +714,7 @@ function humanitarianresponse_documents_views_default_views() {
     '74998571-0fee-f184-119c-73c1aedc9b10' => '74998571-0fee-f184-119c-73c1aedc9b10',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
@@ -808,7 +808,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -821,7 +821,7 @@ function humanitarianresponse_documents_views_default_views() {
     'cb8c7108-c928-6384-e973-eb9b79240c94' => 'cb8c7108-c928-6384-e973-eb9b79240c94',
     '74998571-0fee-f184-119c-73c1aedc9b10' => '74998571-0fee-f184-119c-73c1aedc9b10',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
@@ -926,7 +926,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -939,7 +939,7 @@ function humanitarianresponse_documents_views_default_views() {
     '3dba958e-4b5e-c5d4-b595-a0181f8762a2' => '3dba958e-4b5e-c5d4-b595-a0181f8762a2',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
@@ -1032,7 +1032,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1045,7 +1045,7 @@ function humanitarianresponse_documents_views_default_views() {
     '3dba958e-4b5e-c5d4-b595-a0181f8762a2' => '3dba958e-4b5e-c5d4-b595-a0181f8762a2',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
@@ -1156,7 +1156,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1238,7 +1238,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'document' => 'document',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1332,7 +1332,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1342,7 +1342,7 @@ function humanitarianresponse_documents_views_default_views() {
     '56e12e34-1a72-1534-4121-6b5971a8c2b4' => '56e12e34-1a72-1534-4121-6b5971a8c2b4',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
@@ -1432,7 +1432,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1442,7 +1442,7 @@ function humanitarianresponse_documents_views_default_views() {
     '56e12e34-1a72-1534-4121-6b5971a8c2b4' => '56e12e34-1a72-1534-4121-6b5971a8c2b4',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
@@ -1550,7 +1550,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1632,7 +1632,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'document' => 'document',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1726,7 +1726,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1808,7 +1808,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'document' => 'document',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1903,7 +1903,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -1985,7 +1985,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'document' => 'document',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -2109,7 +2109,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -2173,7 +2173,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
@@ -2226,7 +2226,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
