@@ -103,7 +103,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['label'] = 'Cluster';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
-  /* Field: Content: Theme(s) */
+  /* Field: Content: Themes */
   $handler->display->display_options['fields']['field_themes']['id'] = 'field_themes';
   $handler->display->display_options['fields']['field_themes']['table'] = 'field_data_field_themes';
   $handler->display->display_options['fields']['field_themes']['field'] = 'field_themes';
@@ -461,6 +461,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     'a87cf2af-fe60-0734-fddd-af561c9e8015' => 'a87cf2af-fe60-0734-fddd-af561c9e8015',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['block_description'] = 'Cluster Key Documents';
 
   /* Display: Cluster Guidelines */
@@ -563,6 +564,8 @@ function humanitarianresponse_documents_views_default_views() {
     'fae58e5d-95b2-a9b4-558c-c1c0a1557d77' => 'fae58e5d-95b2-a9b4-558c-c1c0a1557d77',
     '3f096983-5ec2-ae54-f107-0c582cc649fd' => '3f096983-5ec2-ae54-f107-0c582cc649fd',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   $handler->display->display_options['block_description'] = 'Cluster Guidelines';
 
   /* Display: Funding Featured */
@@ -644,6 +647,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     '294895bd-f177-c584-5567-40d5458f3027' => '294895bd-f177-c584-5567-40d5458f3027',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['block_description'] = 'Funding Featured Documents';
 
   /* Display: Resources */
@@ -714,6 +718,8 @@ function humanitarianresponse_documents_views_default_views() {
     '74998571-0fee-f184-119c-73c1aedc9b10' => '74998571-0fee-f184-119c-73c1aedc9b10',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
@@ -733,6 +739,18 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['uuid_1']['expose']['operator'] = 'uuid_1_op';
   $handler->display->display_options['filters']['uuid_1']['expose']['identifier'] = 'uuid_1';
+  $handler->display->display_options['filters']['uuid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['uuid_1']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -821,6 +839,8 @@ function humanitarianresponse_documents_views_default_views() {
     'cb8c7108-c928-6384-e973-eb9b79240c94' => 'cb8c7108-c928-6384-e973-eb9b79240c94',
     '74998571-0fee-f184-119c-73c1aedc9b10' => '74998571-0fee-f184-119c-73c1aedc9b10',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
@@ -839,6 +859,18 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['expose']['label'] = 'Has taxonomy term (UUID)';
   $handler->display->display_options['filters']['uuid_1']['expose']['operator'] = 'uuid_1_op';
   $handler->display->display_options['filters']['uuid_1']['expose']['identifier'] = 'uuid_1';
+  $handler->display->display_options['filters']['uuid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['uuid_1']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -931,6 +963,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['value'] = array(
+    'bc460845-5c27-1234-65a1-c1afdddd4b38' => 'bc460845-5c27-1234-65a1-c1afdddd4b38',
     '8aa14ce5-c267-6e84-41a5-631b262feac3' => '8aa14ce5-c267-6e84-41a5-631b262feac3',
     'c5aa4c2c-f2df-7c84-9191-4e8914ab0eb3' => 'c5aa4c2c-f2df-7c84-9191-4e8914ab0eb3',
     '3f096983-5ec2-ae54-f107-0c582cc649fd' => '3f096983-5ec2-ae54-f107-0c582cc649fd',
@@ -939,11 +972,14 @@ function humanitarianresponse_documents_views_default_views() {
     '3dba958e-4b5e-c5d4-b595-a0181f8762a2' => '3dba958e-4b5e-c5d4-b595-a0181f8762a2',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
   $handler->display->display_options['filters']['uuid_1']['value'] = array(
+    'bc460845-5c27-1234-65a1-c1afdddd4b38' => 'bc460845-5c27-1234-65a1-c1afdddd4b38',
     '8aa14ce5-c267-6e84-41a5-631b262feac3' => '8aa14ce5-c267-6e84-41a5-631b262feac3',
     'c5aa4c2c-f2df-7c84-9191-4e8914ab0eb3' => 'c5aa4c2c-f2df-7c84-9191-4e8914ab0eb3',
     '3f096983-5ec2-ae54-f107-0c582cc649fd' => '3f096983-5ec2-ae54-f107-0c582cc649fd',
@@ -957,6 +993,18 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['uuid_1']['expose']['operator'] = 'uuid_1_op';
   $handler->display->display_options['filters']['uuid_1']['expose']['identifier'] = 'uuid_1';
+  $handler->display->display_options['filters']['uuid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['uuid_1']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1037,6 +1085,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['value'] = array(
+    'bc460845-5c27-1234-65a1-c1afdddd4b38' => 'bc460845-5c27-1234-65a1-c1afdddd4b38',
     '8aa14ce5-c267-6e84-41a5-631b262feac3' => '8aa14ce5-c267-6e84-41a5-631b262feac3',
     'c5aa4c2c-f2df-7c84-9191-4e8914ab0eb3' => 'c5aa4c2c-f2df-7c84-9191-4e8914ab0eb3',
     '3f096983-5ec2-ae54-f107-0c582cc649fd' => '3f096983-5ec2-ae54-f107-0c582cc649fd',
@@ -1045,6 +1094,8 @@ function humanitarianresponse_documents_views_default_views() {
     '3dba958e-4b5e-c5d4-b595-a0181f8762a2' => '3dba958e-4b5e-c5d4-b595-a0181f8762a2',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
@@ -1064,6 +1115,17 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['expose']['label'] = 'Has taxonomy term (UUID)';
   $handler->display->display_options['filters']['uuid_1']['expose']['operator'] = 'uuid_1_op';
   $handler->display->display_options['filters']['uuid_1']['expose']['identifier'] = 'uuid_1';
+  $handler->display->display_options['filters']['uuid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1337,16 +1399,22 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['value'] = array(
+    'ca7a34ac-e14a-6354-c193-df86bd9aa523' => 'ca7a34ac-e14a-6354-c193-df86bd9aa523',
+    'e6a5ebfc-e41b-d964-019b-a8b7436253dc' => 'e6a5ebfc-e41b-d964-019b-a8b7436253dc',
     'fae58e5d-95b2-a9b4-558c-c1c0a1557d77' => 'fae58e5d-95b2-a9b4-558c-c1c0a1557d77',
     '2d54eb2c-0ec0-ed74-29d9-a2f3c03a71d4' => '2d54eb2c-0ec0-ed74-29d9-a2f3c03a71d4',
     '56e12e34-1a72-1534-4121-6b5971a8c2b4' => '56e12e34-1a72-1534-4121-6b5971a8c2b4',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid_1']['field'] = 'uuid';
   $handler->display->display_options['filters']['uuid_1']['value'] = array(
+    'ca7a34ac-e14a-6354-c193-df86bd9aa523' => 'ca7a34ac-e14a-6354-c193-df86bd9aa523',
+    'e6a5ebfc-e41b-d964-019b-a8b7436253dc' => 'e6a5ebfc-e41b-d964-019b-a8b7436253dc',
     'fae58e5d-95b2-a9b4-558c-c1c0a1557d77' => 'fae58e5d-95b2-a9b4-558c-c1c0a1557d77',
     '2d54eb2c-0ec0-ed74-29d9-a2f3c03a71d4' => '2d54eb2c-0ec0-ed74-29d9-a2f3c03a71d4',
     '56e12e34-1a72-1534-4121-6b5971a8c2b4' => '56e12e34-1a72-1534-4121-6b5971a8c2b4',
@@ -1357,6 +1425,18 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['uuid_1']['expose']['operator'] = 'uuid_1_op';
   $handler->display->display_options['filters']['uuid_1']['expose']['identifier'] = 'uuid_1';
+  $handler->display->display_options['filters']['uuid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['uuid_1']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1437,11 +1517,15 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
   $handler->display->display_options['filters']['uuid']['value'] = array(
+    'ca7a34ac-e14a-6354-c193-df86bd9aa523' => 'ca7a34ac-e14a-6354-c193-df86bd9aa523',
+    'e6a5ebfc-e41b-d964-019b-a8b7436253dc' => 'e6a5ebfc-e41b-d964-019b-a8b7436253dc',
     'fae58e5d-95b2-a9b4-558c-c1c0a1557d77' => 'fae58e5d-95b2-a9b4-558c-c1c0a1557d77',
     '2d54eb2c-0ec0-ed74-29d9-a2f3c03a71d4' => '2d54eb2c-0ec0-ed74-29d9-a2f3c03a71d4',
     '56e12e34-1a72-1534-4121-6b5971a8c2b4' => '56e12e34-1a72-1534-4121-6b5971a8c2b4',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Has taxonomy term (UUID) */
   $handler->display->display_options['filters']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['filters']['uuid_1']['table'] = 'taxonomy_index';
@@ -1459,6 +1543,17 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['expose']['label'] = 'Has taxonomy term (UUID)';
   $handler->display->display_options['filters']['uuid_1']['expose']['operator'] = 'uuid_1_op';
   $handler->display->display_options['filters']['uuid_1']['expose']['identifier'] = 'uuid_1';
+  $handler->display->display_options['filters']['uuid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1558,6 +1653,8 @@ function humanitarianresponse_documents_views_default_views() {
     '4393c201-cf56-98f4-a1ce-98ce27f4bd90' => '4393c201-cf56-98f4-a1ce-98ce27f4bd90',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1639,6 +1736,8 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     '4393c201-cf56-98f4-a1ce-98ce27f4bd90' => '4393c201-cf56-98f4-a1ce-98ce27f4bd90',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1734,6 +1833,7 @@ function humanitarianresponse_documents_views_default_views() {
     'a87cf2af-fe60-0734-fddd-af561c9e8015' => 'a87cf2af-fe60-0734-fddd-af561c9e8015',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1815,6 +1915,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     'a87cf2af-fe60-0734-fddd-af561c9e8015' => 'a87cf2af-fe60-0734-fddd-af561c9e8015',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1911,6 +2012,7 @@ function humanitarianresponse_documents_views_default_views() {
     '294895bd-f177-c584-5567-40d5458f3027' => '294895bd-f177-c584-5567-40d5458f3027',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -1992,6 +2094,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     '294895bd-f177-c584-5567-40d5458f3027' => '294895bd-f177-c584-5567-40d5458f3027',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   /* Filter criterion: Content: Cluster(s) (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
@@ -2116,6 +2219,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     'a87cf2af-fe60-0734-fddd-af561c9e8015' => 'a87cf2af-fe60-0734-fddd-af561c9e8015',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['block_description'] = 'Home Key';
 
   /* Display: Home Featured */
@@ -2180,6 +2284,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     '294895bd-f177-c584-5567-40d5458f3027' => '294895bd-f177-c584-5567-40d5458f3027',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['block_description'] = 'Home Featured';
 
   /* Display: Home Reports */
@@ -2239,6 +2344,8 @@ function humanitarianresponse_documents_views_default_views() {
     'cb8c7108-c928-6384-e973-eb9b79240c94' => 'cb8c7108-c928-6384-e973-eb9b79240c94',
     '74998571-0fee-f184-119c-73c1aedc9b10' => '74998571-0fee-f184-119c-73c1aedc9b10',
   );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   $handler->display->display_options['block_description'] = 'Home Reports';
   $translatables['documents'] = array(
     t('Master'),
