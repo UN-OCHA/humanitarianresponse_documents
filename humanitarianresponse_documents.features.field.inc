@@ -934,9 +934,9 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'hs_taxonomy',
         'settings' => array(),
-        'type' => 'options_buttons',
+        'type' => 'taxonomy_hs',
         'weight' => '28',
       ),
     ),
