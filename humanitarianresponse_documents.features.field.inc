@@ -91,6 +91,9 @@ function humanitarianresponse_documents_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_file_languages',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -103,7 +106,13 @@ function humanitarianresponse_documents_field_default_fields() {
         'excluded_languages' => array(),
         'groups' => '',
         'include_native' => 0,
-        'languages' => array(),
+        'languages' => array(
+          'ar' => 'ar',
+          'en' => 'en',
+          'es' => 'es',
+          'fr' => 'fr',
+          'ru' => 'ru',
+        ),
       ),
       'translatable' => '0',
       'type' => 'language_field',
@@ -139,7 +148,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_select',
+        'type' => 'options_buttons',
         'weight' => '4',
       ),
     ),
@@ -220,7 +229,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '4',
+        'weight' => '48',
       ),
     ),
   );
@@ -301,7 +310,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '16',
       ),
     ),
   );
@@ -378,7 +387,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '24',
       ),
     ),
   );
@@ -455,7 +464,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '12',
+        'weight' => '44',
       ),
     ),
   );
@@ -525,7 +534,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'field_collection',
         'settings' => array(),
         'type' => 'field_collection_embed',
-        'weight' => '2',
+        'weight' => '8',
       ),
     ),
   );
@@ -615,7 +624,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '3',
+        'weight' => '12',
       ),
     ),
   );
@@ -693,7 +702,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'hs_taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_hs',
-        'weight' => '1',
+        'weight' => '4',
       ),
     ),
   );
@@ -773,7 +782,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '11',
+        'weight' => '40',
       ),
     ),
   );
@@ -850,7 +859,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '20',
       ),
     ),
   );
@@ -928,7 +937,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '8',
+        'weight' => '28',
       ),
     ),
   );
@@ -1003,10 +1012,13 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '9',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'taxonomy_autocomplete',
+        'weight' => '32',
       ),
     ),
   );
@@ -1030,7 +1042,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'cache_count' => '4',
         'cache_enabled' => 0,
         'granularity' => array(
-          'day' => 0,
+          'day' => 'day',
           'hour' => 0,
           'minute' => 0,
           'month' => 'month',
@@ -1102,7 +1114,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'year_range' => '1975:+0',
         ),
         'type' => 'date_select',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -1183,7 +1195,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '36',
       ),
     ),
   );
