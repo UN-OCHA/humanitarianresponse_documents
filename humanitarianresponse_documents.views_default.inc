@@ -2168,21 +2168,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: File (field_document_files) */
-  $handler->display->display_options['relationships']['field_document_files_value']['id'] = 'field_document_files_value';
-  $handler->display->display_options['relationships']['field_document_files_value']['table'] = 'field_data_field_document_files';
-  $handler->display->display_options['relationships']['field_document_files_value']['field'] = 'field_document_files_value';
-  $handler->display->display_options['relationships']['field_document_files_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field collection item: File */
-  $handler->display->display_options['fields']['field_document_files_file']['id'] = 'field_document_files_file';
-  $handler->display->display_options['fields']['field_document_files_file']['table'] = 'field_data_field_document_files_file';
-  $handler->display->display_options['fields']['field_document_files_file']['field'] = 'field_document_files_file';
-  $handler->display->display_options['fields']['field_document_files_file']['relationship'] = 'field_document_files_value';
-  $handler->display->display_options['fields']['field_document_files_file']['label'] = '';
-  $handler->display->display_options['fields']['field_document_files_file']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_document_files_file']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_document_files_file']['type'] = 'file_table';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -2335,6 +2328,52 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   $handler->display->display_options['block_description'] = 'Home Reports';
+
+  /* Display: Page per country */
+  $handler = $view->new_display('page', 'Page per country', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Countries (field_countries) */
+  $handler->display->display_options['arguments']['field_countries_iso2']['id'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['table'] = 'field_data_field_countries';
+  $handler->display->display_options['arguments']['field_countries_iso2']['field'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_countries_iso2']['limit'] = '0';
+  $handler->display->display_options['path'] = 'countries/%/resources';
+
+  /* Display: Block per country */
+  $handler = $view->new_display('block', 'Block per country', 'block_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View all';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_1';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Countries (field_countries) */
+  $handler->display->display_options['arguments']['field_countries_iso2']['id'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['table'] = 'field_data_field_countries';
+  $handler->display->display_options['arguments']['field_countries_iso2']['field'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_countries_iso2']['limit'] = '0';
+  $handler->display->display_options['block_description'] = 'Documents per Country';
   $translatables['documents'] = array(
     t('Master'),
     t('Resources'),
@@ -2399,10 +2438,12 @@ function humanitarianresponse_documents_views_default_views() {
     t('Featured Documents'),
     t('Featured Feed'),
     t('Home Key'),
-    t('field collection item from field_document_files'),
     t('Home Featured'),
     t('Home Reports'),
     t('Latest Reports'),
+    t('Page per country'),
+    t('Block per country'),
+    t('Documents per Country'),
   );
   $export['documents'] = $view;
 

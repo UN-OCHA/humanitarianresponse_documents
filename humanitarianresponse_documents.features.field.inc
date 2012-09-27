@@ -229,7 +229,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '48',
+        'weight' => '28',
       ),
     ),
   );
@@ -310,7 +310,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '16',
+        'weight' => '10',
       ),
     ),
   );
@@ -387,7 +387,78 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '24',
+        'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-document-field_countries'.
+  $fields['node-document-field_countries'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_countries',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'iso2' => array(
+          0 => 'iso2',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'countries',
+      'settings' => array(
+        'continents' => array(),
+        'countries' => array(),
+        'enabled' => '1',
+        'size' => 5,
+      ),
+      'translatable' => '0',
+      'type' => 'country',
+    ),
+    'field_instance' => array(
+      'bundle' => 'document',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'countries',
+          'settings' => array(),
+          'type' => 'country_default',
+          'weight' => 28,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_countries',
+      'label' => 'Countries',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'countries',
+        'settings' => array(),
+        'type' => 'countries_continent',
+        'weight' => '16',
       ),
     ),
   );
@@ -464,7 +535,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '44',
+        'weight' => '26',
       ),
     ),
   );
@@ -534,7 +605,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'field_collection',
         'settings' => array(),
         'type' => 'field_collection_embed',
-        'weight' => '8',
+        'weight' => '4',
       ),
     ),
   );
@@ -624,7 +695,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '12',
+        'weight' => '6',
       ),
     ),
   );
@@ -702,7 +773,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'hs_taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_hs',
-        'weight' => '4',
+        'weight' => '2',
       ),
     ),
   );
@@ -782,7 +853,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '40',
+        'weight' => '24',
       ),
     ),
   );
@@ -859,7 +930,99 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '20',
+        'weight' => '12',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-document-field_linked_resources'.
+  $fields['node-document-field_linked_resources'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_linked_resources',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'document',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => 29,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_linked_resources',
+      'label' => 'Linked Resources',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => 'user',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => '128',
+        'title_value' => '',
+        'url' => 0,
+        'user_register_form' => FALSE,
+        'validate_url' => 1,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '30',
       ),
     ),
   );
@@ -937,7 +1100,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'hs_taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_hs',
-        'weight' => '28',
+        'weight' => '18',
       ),
     ),
   );
@@ -1018,7 +1181,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '32',
+        'weight' => '20',
       ),
     ),
   );
@@ -1114,7 +1277,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'year_range' => '1975:+0',
         ),
         'type' => 'date_select',
-        'weight' => '14',
+        'weight' => '8',
       ),
     ),
   );
@@ -1195,7 +1358,7 @@ function humanitarianresponse_documents_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '36',
+        'weight' => '22',
       ),
     ),
   );
@@ -1414,12 +1577,14 @@ function humanitarianresponse_documents_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Cluster');
   t('Coordination Hub');
+  t('Countries');
   t('Description');
   t('Emergencies');
   t('File');
   t('Funding');
   t('If you can not find the proper type in this list, please contact your site manager.');
   t('Language');
+  t('Linked Resources');
   t('Location');
   t('Name');
   t('Properties');
