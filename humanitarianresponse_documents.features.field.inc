@@ -579,7 +579,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => '',
+            'image_style' => 'medium',
           ),
           'type' => 'image',
           'weight' => '6',
@@ -755,7 +755,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 26,
+          'weight' => '26',
         ),
         'ical' => array(
           'label' => 'above',
@@ -908,7 +908,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => 29,
+          'weight' => '29',
         ),
         'ical' => array(
           'label' => 'above',
@@ -1166,7 +1166,7 @@ function humanitarianresponse_documents_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => 27,
+          'weight' => '27',
         ),
         'ical' => array(
           'label' => 'above',
@@ -1334,7 +1334,7 @@ function humanitarianresponse_documents_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 25,
+          'weight' => '25',
         ),
         'ical' => array(
           'label' => 'above',
@@ -1506,7 +1506,6 @@ function humanitarianresponse_documents_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Cluster');
   t('Coordination Hub');
-  t('Countries');
   t('Description');
   t('Emergencies');
   t('File');

@@ -2238,7 +2238,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_document_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_document_thumbnail']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'media_responsive_widest',
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -2328,7 +2328,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   $handler->display->display_options['block_description'] = 'Home Reports';
-
   $translatables['documents'] = array(
     t('Master'),
     t('Resources'),
