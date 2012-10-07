@@ -2159,7 +2159,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['link_display'] = 'key';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -2244,7 +2244,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_document_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_document_thumbnail']['settings'] = array(
-    'image_style' => 'media_responsive_widest',
+    'image_style' => 'resp_img__grid_4_with_margin',
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
