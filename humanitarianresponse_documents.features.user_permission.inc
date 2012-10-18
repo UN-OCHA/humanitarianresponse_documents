@@ -15,7 +15,6 @@ function humanitarianresponse_documents_user_default_permissions() {
     'name' => 'administer field collections',
     'roles' => array(
       0 => 'administrator',
-      1 => 'manager',
     ),
     'module' => 'field_collection',
   );
