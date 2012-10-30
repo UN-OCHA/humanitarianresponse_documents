@@ -48,9 +48,11 @@ function humanitarianresponse_documents_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
+          'module' => 'file_formatters',
+          'settings' => array(
+            'format_custom_link_text' => 'Download',
+          ),
+          'type' => 'file_custom_link',
           'weight' => '0',
         ),
         'ical' => array(
@@ -400,6 +402,9 @@ function humanitarianresponse_documents_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_display_properties',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
