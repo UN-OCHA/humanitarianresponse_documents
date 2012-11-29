@@ -11,6 +11,7 @@ dependencies[] = file_formatters
 dependencies[] = hs_taxonomy
 dependencies[] = humanitarianresponse_clusters
 dependencies[] = humanitarianresponse_coordination
+dependencies[] = humanitarianresponse_core
 dependencies[] = humanitarianresponse_display
 dependencies[] = humanitarianresponse_emergencies
 dependencies[] = humanitarianresponse_funding
