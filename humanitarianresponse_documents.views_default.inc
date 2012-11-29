@@ -97,11 +97,11 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Cluster(s) */
+  /* Field: Content: Clusters */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
-  $handler->display->display_options['fields']['field_clusters']['label'] = 'Cluster';
+  $handler->display->display_options['fields']['field_clusters']['label'] = 'Clusters';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
   /* Field: Content: Themes */
   $handler->display->display_options['fields']['field_themes']['id'] = 'field_themes';
@@ -167,14 +167,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -411,7 +411,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Cluster(s) (field_clusters) */
+  /* Contextual filter: Content: Clusters (field_clusters) */
   $handler->display->display_options['arguments']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['arguments']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['arguments']['field_clusters_tid']['field'] = 'field_clusters_tid';
@@ -516,7 +516,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = 'Date';
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Cluster(s) (field_clusters) */
+  /* Contextual filter: Content: Clusters (field_clusters) */
   $handler->display->display_options['arguments']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['arguments']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['arguments']['field_clusters_tid']['field'] = 'field_clusters_tid';
@@ -747,14 +747,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
   $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -873,13 +873,13 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
   $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1007,14 +1007,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
   $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1128,14 +1128,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
   $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1228,14 +1228,14 @@ function humanitarianresponse_documents_views_default_views() {
     'a2b2f3ef-a445-d544-25d3-2e39a2cf36cc' => 'a2b2f3ef-a445-d544-25d3-2e39a2cf36cc',
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1309,13 +1309,13 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = array(
     'a2b2f3ef-a445-d544-25d3-2e39a2cf36cc' => 'a2b2f3ef-a445-d544-25d3-2e39a2cf36cc',
   );
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1439,14 +1439,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
   $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1556,14 +1556,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid_1']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid_1']['hierarchy'] = 1;
   $handler->display->display_options['filters']['uuid_1']['error_message'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1657,14 +1657,14 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['group'] = 1;
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1740,13 +1740,13 @@ function humanitarianresponse_documents_views_default_views() {
   );
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1836,14 +1836,14 @@ function humanitarianresponse_documents_views_default_views() {
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -1918,13 +1918,13 @@ function humanitarianresponse_documents_views_default_views() {
     'a87cf2af-fe60-0734-fddd-af561c9e8015' => 'a87cf2af-fe60-0734-fddd-af561c9e8015',
   );
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -2015,14 +2015,14 @@ function humanitarianresponse_documents_views_default_views() {
   );
   $handler->display->display_options['filters']['uuid']['group'] = 1;
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -2097,13 +2097,13 @@ function humanitarianresponse_documents_views_default_views() {
     '294895bd-f177-c584-5567-40d5458f3027' => '294895bd-f177-c584-5567-40d5458f3027',
   );
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
-  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  /* Filter criterion: Content: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -2398,7 +2398,7 @@ function humanitarianresponse_documents_views_default_views() {
     t('Reports'),
     t('Reports Feed'),
     t('Has taxonomy term (UUID)'),
-    t('Cluster(s) (field_clusters)'),
+    t('Clusters'),
     t('Location (field_locations)'),
     t('Source (field_organizations)'),
     t('Training'),
