@@ -101,7 +101,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
-  $handler->display->display_options['fields']['field_clusters']['label'] = 'Clusters';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
   /* Field: Content: Themes */
   $handler->display->display_options['fields']['field_themes']['id'] = 'field_themes';
@@ -600,7 +599,7 @@ function humanitarianresponse_documents_views_default_views() {
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Funding(s) (field_fundings) */
+  /* Contextual filter: Content: Funding (field_fundings) */
   $handler->display->display_options['arguments']['field_fundings_tid']['id'] = 'field_fundings_tid';
   $handler->display->display_options['arguments']['field_fundings_tid']['table'] = 'field_data_field_fundings';
   $handler->display->display_options['arguments']['field_fundings_tid']['field'] = 'field_fundings_tid';
@@ -2373,7 +2372,7 @@ function humanitarianresponse_documents_views_default_views() {
     t('There are no resources in this category'),
     t('Title'),
     t('Type'),
-    t('Cluster'),
+    t('Clusters'),
     t('Theme'),
     t('Location'),
     t('Source'),
@@ -2398,7 +2397,6 @@ function humanitarianresponse_documents_views_default_views() {
     t('Reports'),
     t('Reports Feed'),
     t('Has taxonomy term (UUID)'),
-    t('Clusters'),
     t('Location (field_locations)'),
     t('Source (field_organizations)'),
     t('Training'),
