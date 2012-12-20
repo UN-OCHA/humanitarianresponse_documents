@@ -739,7 +739,7 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_document_type',
-      'label' => 'Type',
+      'label' => 'Document Type',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1583,7 +1583,7 @@ function humanitarianresponse_documents_field_default_fields() {
   t('Theme');
   t('Thumbnail');
   t('Title');
-  t('Type');
+  t('Document Type');
 
   return $fields;
 }
