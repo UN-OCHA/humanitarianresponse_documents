@@ -287,6 +287,10 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['path'] = 'taxonomy/term/%/resources';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Documents';
+  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Block per term */
   $handler = $view->new_display('block', 'Block per term', 'block_per_term');
