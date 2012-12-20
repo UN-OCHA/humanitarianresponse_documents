@@ -18,6 +18,9 @@ function humanitarianresponse_documents_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_document_files_file',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -65,7 +68,7 @@ function humanitarianresponse_documents_field_default_fields() {
       'entity_type' => 'field_collection_item',
       'field_name' => 'field_document_files_file',
       'label' => 'File',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'description_field' => 0,
         'file_directory' => 'documents/files',
@@ -77,6 +80,25 @@ function humanitarianresponse_documents_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
+          'filefield_sources' => array(
+            'filefield_sources' => array(
+              'attach' => 0,
+              'clipboard' => 0,
+              'reference' => 0,
+              'remote' => 'remote',
+            ),
+            'source_attach' => array(
+              'absolute' => '0',
+              'attach_mode' => 'move',
+              'path' => 'file_attach',
+            ),
+            'source_imce' => array(
+              'imce_mode' => 0,
+            ),
+            'source_reference' => array(
+              'autocomplete' => '0',
+            ),
+          ),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
@@ -631,6 +653,20 @@ function humanitarianresponse_documents_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
+          'filefield_sources' => array(
+            'filefield_sources' => array(),
+            'source_attach' => array(
+              'absolute' => 0,
+              'attach_mode' => 'move',
+              'path' => 'file_attach',
+            ),
+            'source_imce' => array(
+              'imce_mode' => 0,
+            ),
+            'source_reference' => array(
+              'autocomplete' => '0',
+            ),
+          ),
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
