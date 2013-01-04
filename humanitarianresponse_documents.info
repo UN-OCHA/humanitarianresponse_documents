@@ -57,7 +57,6 @@ features[field][] = node-document-field_organizations
 features[field][] = node-document-field_publication_date
 features[field][] = node-document-field_themes
 features[field][] = node-document-title_field
-features[field][] = taxonomy_term-document_types-description_field
 features[field][] = taxonomy_term-document_types-name_field
 features[node][] = document
 features[taxonomy][] = document_types
