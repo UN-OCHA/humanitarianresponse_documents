@@ -92,7 +92,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Type */
+  /* Field: Content: Document Type */
   $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
@@ -153,7 +153,7 @@ function humanitarianresponse_documents_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Type (field_document_type) */
+  /* Filter criterion: Content: Document Type (field_document_type) */
   $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
@@ -248,7 +248,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Type */
+  /* Field: Content: Document Type */
   $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
@@ -326,7 +326,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Type */
+  /* Field: Content: Document Type */
   $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
@@ -494,7 +494,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Type */
+  /* Field: Content: Document Type */
   $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
@@ -2375,12 +2375,13 @@ function humanitarianresponse_documents_views_default_views() {
     t('last »'),
     t('There are no resources in this category'),
     t('Title'),
-    t('Type'),
+    t('Document Type'),
     t('Clusters'),
     t('Theme'),
     t('Location'),
     t('Source'),
     t('File'),
+    t('Type'),
     t('Documents per term'),
     t('more'),
     t('Date'),
