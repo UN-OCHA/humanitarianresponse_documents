@@ -113,7 +113,7 @@ function humanitarianresponse_documents_feeds_importer_default() {
           ),
           1 => array(
             'source' => 'Title',
-            'target' => 'title_field',
+            'target' => 'title_field:et:en',
             'unique' => FALSE,
           ),
           2 => array(
