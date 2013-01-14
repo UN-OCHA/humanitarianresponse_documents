@@ -382,8 +382,8 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['block_description'] = 'Documents per term';
 
-  /* Display: Cluster Key */
-  $handler = $view->new_display('block', 'Cluster Key', 'cluster_key');
+  /* Display: Key Documents per term */
+  $handler = $view->new_display('block', 'Key Documents per term', 'cluster_key');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Key Documents';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
@@ -414,23 +414,17 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Clusters (field_clusters) */
-  $handler->display->display_options['arguments']['field_clusters_tid']['id'] = 'field_clusters_tid';
-  $handler->display->display_options['arguments']['field_clusters_tid']['table'] = 'field_data_field_clusters';
-  $handler->display->display_options['arguments']['field_clusters_tid']['field'] = 'field_clusters_tid';
-  $handler->display->display_options['arguments']['field_clusters_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_clusters_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_clusters_tid']['default_argument_options']['vocabularies'] = array(
-    'clusters' => 'clusters',
-  );
-  $handler->display->display_options['arguments']['field_clusters_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_clusters_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_clusters_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_clusters_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_clusters_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_clusters_tid']['validate_options']['vocabularies'] = array(
-    'clusters' => 'clusters',
-  );
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -455,7 +449,7 @@ function humanitarianresponse_documents_views_default_views() {
     'a87cf2af-fe60-0734-fddd-af561c9e8015' => 'a87cf2af-fe60-0734-fddd-af561c9e8015',
   );
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
-  $handler->display->display_options['block_description'] = 'Cluster Key Documents';
+  $handler->display->display_options['block_description'] = 'Key Documents per term';
 
   /* Display: Cluster Guidelines */
   $handler = $view->new_display('block', 'Cluster Guidelines', 'cluster_guidelines');
@@ -2387,10 +2381,9 @@ function humanitarianresponse_documents_views_default_views() {
     t('Date'),
     t('All'),
     t('Block per term'),
-    t('Cluster Key'),
+    t('Key Documents per term'),
     t('Key Documents'),
     t('There are no key documents'),
-    t('Cluster Key Documents'),
     t('Cluster Guidelines'),
     t('Guidelines & Templates'),
     t('There are no guidelines & templates'),

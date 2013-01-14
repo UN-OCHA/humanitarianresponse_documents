@@ -531,6 +531,7 @@ function humanitarianresponse_documents_field_default_fields() {
       'module' => 'field_collection',
       'settings' => array(
         'entity_translation_sync' => FALSE,
+        'hide_blank_items' => TRUE,
         'path' => '',
       ),
       'translatable' => '0',
