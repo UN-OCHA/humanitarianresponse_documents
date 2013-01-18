@@ -122,7 +122,8 @@ function humanitarianresponse_documents_strongarm() {
   $strongarm->name = 'node_options_document';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'revision',
+    1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_document'] = $strongarm;
 
