@@ -138,6 +138,11 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
   $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
   $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -451,112 +456,8 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['block_description'] = 'Key Documents per term';
 
-  /* Display: Cluster Guidelines */
-  $handler = $view->new_display('block', 'Cluster Guidelines', 'cluster_guidelines');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Guidelines & Templates';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['content'] = 'There are no guidelines & templates';
-  $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Document Type */
-  $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
-  $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
-  $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
-  $handler->display->display_options['fields']['field_document_type']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
-  /* Field: Content: File */
-  $handler->display->display_options['fields']['field_document_files']['id'] = 'field_document_files';
-  $handler->display->display_options['fields']['field_document_files']['table'] = 'field_data_field_document_files';
-  $handler->display->display_options['fields']['field_document_files']['field'] = 'field_document_files';
-  $handler->display->display_options['fields']['field_document_files']['settings'] = array(
-    'edit' => 'Edit',
-    'delete' => 'Delete',
-    'add' => 'Add',
-    'description' => 1,
-    'view_mode' => 'full',
-  );
-  $handler->display->display_options['fields']['field_document_files']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_document_files']['multi_type'] = 'ul';
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Date';
-  $handler->display->display_options['fields']['created']['date_format'] = 'short';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Clusters (field_clusters) */
-  $handler->display->display_options['arguments']['field_clusters_tid']['id'] = 'field_clusters_tid';
-  $handler->display->display_options['arguments']['field_clusters_tid']['table'] = 'field_data_field_clusters';
-  $handler->display->display_options['arguments']['field_clusters_tid']['field'] = 'field_clusters_tid';
-  $handler->display->display_options['arguments']['field_clusters_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_clusters_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_clusters_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_clusters_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_clusters_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_clusters_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_clusters_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_clusters_tid']['validate_options']['vocabularies'] = array(
-    'clusters' => 'clusters',
-  );
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'document' => 'document',
-  );
-  /* Filter criterion: Content: Has taxonomy term (UUID) */
-  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
-  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
-  $handler->display->display_options['filters']['uuid']['value'] = array(
-    'fae58e5d-95b2-a9b4-558c-c1c0a1557d77' => 'fae58e5d-95b2-a9b4-558c-c1c0a1557d77',
-    '3f096983-5ec2-ae54-f107-0c582cc649fd' => '3f096983-5ec2-ae54-f107-0c582cc649fd',
-  );
-  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
-  $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
-  $handler->display->display_options['block_description'] = 'Cluster Guidelines';
-
-  /* Display: Funding Featured */
-  $handler = $view->new_display('block', 'Funding Featured', 'funding_featured');
+  /* Display: Featured Documents per term */
+  $handler = $view->new_display('block', 'Featured Documents per term', 'funding_featured');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Document';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
@@ -597,20 +498,17 @@ function humanitarianresponse_documents_views_default_views() {
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Funding (field_fundings) */
-  $handler->display->display_options['arguments']['field_fundings_tid']['id'] = 'field_fundings_tid';
-  $handler->display->display_options['arguments']['field_fundings_tid']['table'] = 'field_data_field_fundings';
-  $handler->display->display_options['arguments']['field_fundings_tid']['field'] = 'field_fundings_tid';
-  $handler->display->display_options['arguments']['field_fundings_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_fundings_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_fundings_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_fundings_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_fundings_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_fundings_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_fundings_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_fundings_tid']['validate_options']['vocabularies'] = array(
-    'funding' => 'funding',
-  );
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -635,7 +533,7 @@ function humanitarianresponse_documents_views_default_views() {
     '294895bd-f177-c584-5567-40d5458f3027' => '294895bd-f177-c584-5567-40d5458f3027',
   );
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
-  $handler->display->display_options['block_description'] = 'Funding Featured Documents';
+  $handler->display->display_options['block_description'] = 'Featured Documents per term';
 
   /* Display: Resources */
   $handler = $view->new_display('page', 'Resources', 'resources');
@@ -2384,13 +2282,9 @@ function humanitarianresponse_documents_views_default_views() {
     t('Key Documents per term'),
     t('Key Documents'),
     t('There are no key documents'),
-    t('Cluster Guidelines'),
-    t('Guidelines & Templates'),
-    t('There are no guidelines & templates'),
-    t('Funding Featured'),
+    t('Featured Documents per term'),
     t('Featured Document'),
     t('There is no featured document'),
-    t('Funding Featured Documents'),
     t('Resources Feed'),
     t('Reports'),
     t('Reports Feed'),
