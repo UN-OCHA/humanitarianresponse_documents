@@ -109,13 +109,13 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_themes']['label'] = 'Theme';
   $handler->display->display_options['fields']['field_themes']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_themes']['delta_offset'] = '0';
-  /* Field: Content: Location */
+  /* Field: Field: Location */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'field_data_field_locations';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
   $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
-  /* Field: Content: Source */
+  /* Field: Field: Source */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -183,7 +183,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -196,7 +196,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -392,6 +392,9 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Key Documents';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'search/type/document/!2/!1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -430,6 +433,19 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  /* Contextual filter: Global: Null */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = '$tid = $view->args[0];
+$term = taxonomy_term_load($tid);
+$voc = taxonomy_vocabulary_load($term->vid);
+return $voc->machine_name;';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -461,6 +477,9 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Document';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'search/type/document/!2/!1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -509,6 +528,19 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  /* Contextual filter: Global: Null */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = '$tid = $view->args[0];
+$term = taxonomy_term_load($tid);
+$voc = taxonomy_vocabulary_load($term->vid);
+return $voc->machine_name;';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -654,7 +686,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -667,7 +699,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -779,7 +811,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -790,7 +822,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -914,7 +946,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -927,7 +959,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1035,7 +1067,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1048,7 +1080,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1135,7 +1167,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1148,7 +1180,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1215,7 +1247,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1226,7 +1258,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1346,7 +1378,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1359,7 +1391,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1463,7 +1495,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1475,7 +1507,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1564,7 +1596,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1577,7 +1609,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1646,7 +1678,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1657,7 +1689,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1743,7 +1775,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1756,7 +1788,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1824,7 +1856,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1835,7 +1867,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -1922,7 +1954,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -1935,7 +1967,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -2003,7 +2035,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
@@ -2014,7 +2046,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['expose']['identifier'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
-  /* Filter criterion: Content: Source (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
