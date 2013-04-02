@@ -61,6 +61,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'file_custom_link',
           'weight' => '0',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -169,6 +175,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'language_default',
           'weight' => '2',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -237,6 +249,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '2',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'ical' => array(
           'label' => 'above',
@@ -325,6 +343,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '16',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -403,6 +427,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '17',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'ical' => array(
           'label' => 'above',
@@ -486,6 +516,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '23',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -556,6 +592,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'field_collection_view',
           'weight' => '12',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -598,6 +640,9 @@ function humanitarianresponse_documents_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_document_thumbnail',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -638,6 +683,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'image',
           'weight' => '6',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -673,26 +724,17 @@ function humanitarianresponse_documents_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'image',
+        'module' => 'imagefield_crop',
         'settings' => array(
-          'filefield_sources' => array(
-            'filefield_sources' => array(),
-            'source_attach' => array(
-              'absolute' => 0,
-              'attach_mode' => 'move',
-              'path' => 'file_attach',
-            ),
-            'source_imce' => array(
-              'imce_mode' => 0,
-            ),
-            'source_reference' => array(
-              'autocomplete' => '0',
-            ),
-          ),
+          'collapsible' => '2',
+          'croparea' => '250x200',
+          'enforce_minimum' => 1,
+          'enforce_ratio' => 1,
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
+          'resolution' => '250x200',
         ),
-        'type' => 'image_image',
+        'type' => 'imagefield_crop_widget',
         'weight' => '6',
       ),
     ),
@@ -745,6 +787,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '0',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'ical' => array(
           'label' => 'above',
@@ -829,6 +877,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '26',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -910,6 +964,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '18',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'ical' => array(
           'label' => 'above',
@@ -993,6 +1053,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => 30,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1073,6 +1139,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'settings' => array(),
           'type' => 'link_default',
           'weight' => '29',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'ical' => array(
           'label' => 'above',
@@ -1172,6 +1244,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '19',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1253,6 +1331,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '24',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'ical' => array(
           'label' => 'above',
@@ -1345,6 +1429,12 @@ function humanitarianresponse_documents_field_default_fields() {
           ),
           'type' => 'date_default',
           'weight' => '27',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'ical' => array(
           'label' => 'above',
@@ -1449,6 +1539,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '21',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1525,6 +1621,12 @@ function humanitarianresponse_documents_field_default_fields() {
           'type' => 'hidden',
           'weight' => '25',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'ical' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1595,6 +1697,12 @@ function humanitarianresponse_documents_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'entityreference_view_widget' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',

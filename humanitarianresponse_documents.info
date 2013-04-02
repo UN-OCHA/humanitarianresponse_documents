@@ -27,6 +27,7 @@ dependencies[] = humanitarianresponse_locations
 dependencies[] = humanitarianresponse_organizations
 dependencies[] = humanitarianresponse_themes
 dependencies[] = image
+dependencies[] = imagefield_crop
 dependencies[] = languagefield
 dependencies[] = link
 dependencies[] = node
