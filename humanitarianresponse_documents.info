@@ -56,7 +56,6 @@ features[feeds_tamper][] = csv_documents-themes-explode
 features[field_base][] = field_document_files
 features[field_base][] = field_document_thumbnail
 features[field_base][] = field_document_type
-features[field_base][] = field_publication_date
 features[field_instance][] = node-document-body
 features[field_instance][] = node-document-field_clusters
 features[field_instance][] = node-document-field_coordination_hubs
