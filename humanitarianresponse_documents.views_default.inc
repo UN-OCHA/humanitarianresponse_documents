@@ -2184,8 +2184,10 @@ return $voc->machine_name;';
   $handler->display->display_options['fields']['field_document_thumbnail']['label'] = '';
   $handler->display->display_options['fields']['field_document_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_document_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_document_thumbnail']['type'] = 'picture';
   $handler->display->display_options['fields']['field_document_thumbnail']['settings'] = array(
-    'image_style' => 'resp_img__grid_4_with_margin',
+    'picture_group' => 'grid_4_with_margin',
+    'fallback_image_style' => '',
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
