@@ -2187,7 +2187,7 @@ return $voc->machine_name;';
   $handler->display->display_options['fields']['field_document_thumbnail']['type'] = 'picture';
   $handler->display->display_options['fields']['field_document_thumbnail']['settings'] = array(
     'picture_group' => 'grid_4_with_margin',
-    'fallback_image_style' => '',
+    'fallback_image_style' => 'grid_4_with_margin_normal',
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
