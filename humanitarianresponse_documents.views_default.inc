@@ -102,7 +102,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
-  /* Field: Content: Themes */
+  /* Field: Content: Theme(s) */
   $handler->display->display_options['fields']['field_themes']['id'] = 'field_themes';
   $handler->display->display_options['fields']['field_themes']['table'] = 'field_data_field_themes';
   $handler->display->display_options['fields']['field_themes']['field'] = 'field_themes';
@@ -368,6 +368,19 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
+  /* Contextual filter: Global: Null */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = '$tid = $view->args[0];
+$term = taxonomy_term_load($tid);
+$voc = taxonomy_vocabulary_load($term->vid);
+return $voc->machine_name;';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -567,12 +580,12 @@ return $voc->machine_name;';
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'display_properties';
   $handler->display->display_options['block_description'] = 'Featured Documents per term';
 
-  /* Display: Resources */
+  /* Display: Documents */
   $handler = $view->new_display('page', 'Documents', 'resources');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'resources';
 
-  /* Display: Resources Feed */
+  /* Display: Documents Feed */
   $handler = $view->new_display('feed', 'Documents Feed', 'resources_feed');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -2285,7 +2298,7 @@ return $voc->machine_name;';
   $handler->display->display_options['block_description'] = 'Home Reports';
   $translatables['documents'] = array(
     t('Master'),
-    t('Resources'),
+    t('Documents'),
     t('View all'),
     t('Search'),
     t('Reset'),
@@ -2299,7 +2312,7 @@ return $voc->machine_name;';
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('There are no resources in this category'),
+    t('There are no documents in this category'),
     t('Title'),
     t('Document Type'),
     t('Clusters'),
@@ -2319,7 +2332,7 @@ return $voc->machine_name;';
     t('Featured Documents per term'),
     t('Featured Document'),
     t('There is no featured document'),
-    t('Resources Feed'),
+    t('Documents Feed'),
     t('Reports'),
     t('Reports Feed'),
     t('Has taxonomy term (UUID)'),
