@@ -22,7 +22,7 @@ function humanitarianresponse_documents_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Resources';
+  $handler->display->display_options['title'] = 'Documents';
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -84,7 +84,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['content'] = 'There are no resources in this category';
+  $handler->display->display_options['empty']['area']['content'] = 'There are no documents in this category';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -568,12 +568,12 @@ return $voc->machine_name;';
   $handler->display->display_options['block_description'] = 'Featured Documents per term';
 
   /* Display: Resources */
-  $handler = $view->new_display('page', 'Resources', 'resources');
+  $handler = $view->new_display('page', 'Documents', 'resources');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'resources';
 
   /* Display: Resources Feed */
-  $handler = $view->new_display('feed', 'Resources Feed', 'resources_feed');
+  $handler = $view->new_display('feed', 'Documents Feed', 'resources_feed');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
