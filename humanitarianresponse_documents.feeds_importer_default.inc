@@ -106,7 +106,7 @@ function humanitarianresponse_documents_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'content_type' => 'document',
+        'bundle' => 'document',
         'expire' => '-1',
         'author' => 0,
         'authorize' => 1,
