@@ -52,17 +52,22 @@ function humanitarianresponse_documents_feeds_importer_default() {
             'target' => 'name_field:et:fr',
             'unique' => FALSE,
           ),
-          3 => array(
+          4 => array(
+            'source' => 'Name:es',
+            'target' => 'name_field:et:es',
+            'unique' => FALSE,
+          ),
+          5 => array(
             'source' => 'GUID',
             'target' => 'guid',
             'unique' => 1,
           ),
-          4 => array(
+          6 => array(
             'source' => 'Parent',
             'target' => 'parent',
             'unique' => FALSE,
           ),
-          5 => array(
+          7 => array(
             'source' => 'UUID',
             'target' => 'uuid:uuid',
             'unique' => FALSE,
