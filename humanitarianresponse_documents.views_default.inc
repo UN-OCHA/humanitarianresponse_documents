@@ -115,7 +115,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
   $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
-  /* Field: Field: Source */
+  /* Field: Field: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -196,7 +196,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Field: Source (field_organizations) */
+  /* Filter criterion: Field: Organization (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -219,83 +219,6 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-
-  /* Display: Documents per term */
-  $handler = $view->new_display('page', 'Documents per term', 'documents_per_term');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Document Type */
-  $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
-  $handler->display->display_options['fields']['field_document_type']['table'] = 'field_data_field_document_type';
-  $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
-  $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: File */
-  $handler->display->display_options['fields']['field_document_files']['id'] = 'field_document_files';
-  $handler->display->display_options['fields']['field_document_files']['table'] = 'field_data_field_document_files';
-  $handler->display->display_options['fields']['field_document_files']['field'] = 'field_document_files';
-  $handler->display->display_options['fields']['field_document_files']['settings'] = array(
-    'edit' => 'Edit',
-    'delete' => 'Delete',
-    'add' => 'Add',
-    'description' => 1,
-    'view_mode' => 'full',
-  );
-  $handler->display->display_options['fields']['field_document_files']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_document_files']['multi_type'] = 'ul';
-  $handler->display->display_options['fields']['field_document_files']['separator'] = '';
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Date';
-  $handler->display->display_options['fields']['created']['date_format'] = 'short';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Has taxonomy term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
-  $handler->display->display_options['path'] = 'taxonomy/term/%/resources';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Documents';
-  $handler->display->display_options['menu']['weight'] = '4';
-  $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Block per term */
   $handler = $view->new_display('block', 'Block per term', 'block_per_term');
@@ -795,15 +718,15 @@ return $voc->machine_name;';
     t('Clusters'),
     t('Theme'),
     t('Location'),
-    t('Source'),
+    t('Organization'),
     t('File'),
     t('Type'),
-    t('Documents per term'),
-    t('more'),
-    t('Date'),
-    t('All'),
+    t('Source'),
     t('Block per term'),
     t('Latest Documents'),
+    t('more'),
+    t('All'),
+    t('Documents per term'),
     t('Key Documents per term'),
     t('Key Documents'),
     t('There are no key documents'),
