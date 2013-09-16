@@ -69,7 +69,6 @@ features[field_instance][] = node-document-field_document_thumbnail
 features[field_instance][] = node-document-field_document_type
 features[field_instance][] = node-document-field_emergencies
 features[field_instance][] = node-document-field_fundings
-features[field_instance][] = node-document-field_keywords
 features[field_instance][] = node-document-field_linked_resources
 features[field_instance][] = node-document-field_locations
 features[field_instance][] = node-document-field_organizations
