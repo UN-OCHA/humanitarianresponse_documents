@@ -10,7 +10,7 @@
 function humanitarianresponse_documents_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: administer field collections.
+  // Exported permission: 'administer field collections'.
   $permissions['administer field collections'] = array(
     'name' => 'administer field collections',
     'roles' => array(
@@ -19,28 +19,32 @@ function humanitarianresponse_documents_user_default_permissions() {
     'module' => 'field_collection',
   );
 
-  // Exported permission: create document content.
+  // Exported permission: 'create document content'.
   $permissions['create document content'] = array(
     'name' => 'create document content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
+      'moderator' => 'moderator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: delete own document content.
+  // Exported permission: 'delete own document content'.
   $permissions['delete own document content'] = array(
     'name' => 'delete own document content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: edit own document content.
+  // Exported permission: 'edit own document content'.
   $permissions['edit own document content'] = array(
     'name' => 'edit own document content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
     ),
     'module' => 'node',
