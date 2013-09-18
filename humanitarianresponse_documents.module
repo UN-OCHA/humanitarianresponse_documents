@@ -12,3 +12,17 @@ include_once('humanitarianresponse_documents.features.inc');
 function humanitarianresponse_documents_cron() {
   humanitarianresponse_core_feeds_check('csv_document_types', 'http://terms.humanitarianresponse.info/document-types.csv');
 }
+
+/**
+ * Alter the default fields right before they are cached into the database.
+ *
+ * @param &$field_bases
+ *   By reference. The field_bases that have been declared by another feature.
+ */
+ 
+function humanitarianresponse_documents_field_default_field_bases_alter(&$field_bases) {
+  if (isset($field_bases['field_document_thumbnail']['settings']['default_image'])) {
+    $fid = $field_bases['field_document_thumbnail']['settings']['default_image'];
+    $field_bases['field_document_thumbnail']['settings']['default_image'] = variable_get('default_image_fid', $fid);
+  }
+}

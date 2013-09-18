@@ -2,6 +2,32 @@
 /**
  * @file Installs HumanitarianResponse Documents
  */
+ 
+function humanitarianresponse_documents_default_image_create(){
+  $default_image = array(
+    'scheme' => 'public://',
+    'dest_directory' => 'default_images',
+    'source_path' => drupal_get_path('module', 'humanitarianresponse_documents') . '/images/' . 'Doc-icon.png',
+    'file_name' => 'Doc-icon.png',
+    'variable' => 'default_image_fid',
+  );
+  $file_uri = $default_image['scheme'] . $default_image['dest_directory'] . '/' . $default_image['file_name'];
+  $full_dir = $default_image['scheme'] . $default_image['dest_directory'];
+  file_prepare_directory($full_dir, FILE_CREATE_DIRECTORY);
+  file_unmanaged_copy($default_image['source_path'], $file_uri, FILE_EXISTS_REPLACE);
+  $file = (object) array(
+    'uid' => 1,
+    'status' => FILE_STATUS_PERMANENT,
+    'filename' => $default_image['file_name'],
+    'uri' => $file_uri,
+    'filemime' => file_get_mimetype($default_image['source_path']),
+  );
+  $file = file_save($file);
+  if ($file) {
+    variable_set($default_image['variable'], $file->fid);
+  }
+  return $file;
+}
 
 /**
  * Implements hook_install()
@@ -24,5 +50,29 @@ function humanitarianresponse_documents_install() {
   
   // Set variable
   variable_set('file_private_path', $dir);
+  $file = humanitarianresponse_documents_default_image_create();
 }
 
+/**
+ * Implements hook_uninstall()
+ */
+ 
+function humanitarianresponse_documents_uninstall() {
+  $fid = variable_get('default_image_fid', FALSE);
+    if ($fid) {
+      $file = file_load($fid);
+      file_delete($file, TRUE);
+      variable_del('default_image_fid');
+    }
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Saving a default image and storing the fid
+ * in a variable.
+ */
+ 
+function humanitarianresponse_documents_update_7100() {
+  humanitarianresponse_documents_default_image_create();
+}
