@@ -115,7 +115,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
   $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
-  /* Field: Field: Organization */
+  /* Field: Field: Source */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -196,7 +196,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Field: Organization (field_organizations) */
+  /* Filter criterion: Field: Source (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -718,10 +718,9 @@ return $voc->machine_name;';
     t('Clusters'),
     t('Theme'),
     t('Location'),
-    t('Organization'),
+    t('Source'),
     t('File'),
     t('Type'),
-    t('Source'),
     t('Block per term'),
     t('Latest Documents'),
     t('more'),

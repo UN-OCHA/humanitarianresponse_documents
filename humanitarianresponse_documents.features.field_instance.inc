@@ -238,7 +238,7 @@ function humanitarianresponse_documents_field_default_field_instances() {
   // Exported field_instance: 'node-document-field_coordination_hubs'
   $field_instances['node-document-field_coordination_hubs'] = array(
     'bundle' => 'document',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -522,7 +522,7 @@ function humanitarianresponse_documents_field_default_field_instances() {
   // Exported field_instance: 'node-document-field_emergencies'
   $field_instances['node-document-field_emergencies'] = array(
     'bundle' => 'document',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -574,7 +574,7 @@ function humanitarianresponse_documents_field_default_field_instances() {
   // Exported field_instance: 'node-document-field_fundings'
   $field_instances['node-document-field_fundings'] = array(
     'bundle' => 'document',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -702,6 +702,12 @@ function humanitarianresponse_documents_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 30,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -900,6 +906,7 @@ function humanitarianresponse_documents_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'apply_chosen' => 0,
         'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
