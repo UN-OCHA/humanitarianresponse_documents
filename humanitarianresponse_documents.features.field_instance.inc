@@ -698,11 +698,12 @@ function humanitarianresponse_documents_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'ds',
+        'module' => 'taxonomy',
         'settings' => array(
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 30,
       ),
       'ical' => array(
@@ -740,7 +741,7 @@ function humanitarianresponse_documents_field_default_field_instances() {
   // Exported field_instance: 'node-document-field_locations'
   $field_instances['node-document-field_locations'] = array(
     'bundle' => 'document',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -780,11 +781,11 @@ function humanitarianresponse_documents_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 18,
     ),
   );
