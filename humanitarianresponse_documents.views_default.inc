@@ -115,7 +115,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
   $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
-  /* Field: Field: Source */
+  /* Field: Field: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -196,7 +196,7 @@ function humanitarianresponse_documents_views_default_views() {
   $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
   $handler->display->display_options['filters']['field_locations_tid']['hierarchy'] = 1;
-  /* Filter criterion: Field: Source (field_organizations) */
+  /* Filter criterion: Field: Organization (field_organizations) */
   $handler->display->display_options['filters']['field_organizations_tid']['id'] = 'field_organizations_tid';
   $handler->display->display_options['filters']['field_organizations_tid']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['filters']['field_organizations_tid']['field'] = 'field_organizations_tid';
@@ -696,6 +696,120 @@ return $voc->machine_name;';
   $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['uuid']['hierarchy'] = 1;
   $handler->display->display_options['block_description'] = 'Home Reports';
+
+  /* Display: Humanitarian Bulletin */
+  $handler = $view->new_display('block', 'Humanitarian Bulletin', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Humanitarian Bulletin';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View all';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['value'] = array(
+    '31afa99a-6f2a-1484-6504-9c60192befbb' => '31afa99a-6f2a-1484-6504-9c60192befbb',
+  );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['block_description'] = 'Humanitarian Bulletin';
+
+  /* Display: 3W / 4W  */
+  $handler = $view->new_display('block', '3W / 4W ', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '3W / 4W';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View all';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term (UUID) */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['value'] = array(
+    'f7da7098-8d67-4295-9c25-561e2a14cbb4' => 'f7da7098-8d67-4295-9c25-561e2a14cbb4',
+  );
+  $handler->display->display_options['filters']['uuid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['block_description'] = '3W / 4W ';
   $translatables['documents'] = array(
     t('Master'),
     t('Documents'),
@@ -718,9 +832,10 @@ return $voc->machine_name;';
     t('Clusters'),
     t('Theme'),
     t('Location'),
-    t('Source'),
+    t('Organization'),
     t('File'),
     t('Type'),
+    t('Source'),
     t('Block per term'),
     t('Latest Documents'),
     t('more'),
@@ -736,6 +851,9 @@ return $voc->machine_name;';
     t('Home Featured'),
     t('Home Reports'),
     t('Latest Reports'),
+    t('Humanitarian Bulletin'),
+    t('3W / 4W '),
+    t('3W / 4W'),
   );
   $export['documents'] = $view;
 
